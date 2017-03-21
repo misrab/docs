@@ -23,7 +23,7 @@ Hayek postulates that the most successful form of money in an economy of competi
 While there is a range of projects in the blockchain space aiming to create cryptocurrency with price stability, the majority use a centralized custodian of the funds or some kind of trusted third party, which erases many of the benefits offered by the decentralized applications they are used on, and limits their ability to interconnect and synergize in a permissionless manner. For a price-stable cryptocurrency to fit coherently into the decentralized ecosystem, such a token must adhere to the principles of decentralization.
 
 
-## The Basic Mechanics & Economic Thesis of the Dai Credit System
+## The Basic Mechanics
 
 Dai is a cryptocurrency that is backed by other digital assets as collateral. Any user can create Dai by borrowing against collateral they cryptographically lock inside the Dai Credit System. The collateral and Dai-denominated debt are contained in a smart contract called a Collateralized Debt Position (CDP for short). CDPs are owned by a users private key, and can be freely transferred to other users as if it was a digital asset, however CDP’s are not fungible with each other.
 
