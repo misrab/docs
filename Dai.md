@@ -142,6 +142,8 @@ As mentioned above, a cryptocurrency with price stability is a basic requirement
  
 ## Primary Risks and their Mitigation
  
+There are many potential risks facing the successful development, deployment and operation of the Dai Credit System. It is vital that both the Maker community and the Dai foundation take all necessary steps to mitigate these risks as much as possible. Here's a list of the primary risks we've identified and how we plan to mitigate them:
+ 
 ### Malicious hacking attack against the smart contract infrastructure
 
 The greatest risk to the system during its early stages is the risk of a malicious programmer finding an exploit in the deployed smart contracts, and using it to break or steal from the system before the vulnerability can be fixed. Worst case scenario all decentralized digital assets that are held as collateral in The Dai Credit System such as Ether or Augur Reputation could be stolen without any chance of recovery. The part of the collateral portfolio that is not decentralized, such as Digix Gold IOU’s, would not be stolen in such an event because they can be frozen and controlled through a centralized backdoor.
@@ -213,10 +215,16 @@ The Dai Credit System was designed to solve the crucial problem of stable exchan
 
 ## Links
 [Chat](https://chat.makerdao.com/) - Primary platform of community interaction
+
 [Forum](https://forum.makerdao.com/) - For debate and proposals
+
 [Subreddit](https://reddit.com/r/makerdao) - Best place to get latest news and links
+
 [GitHub](https://github.com/makerdao) - Repository of the public Maker code
+
 [TeamSpeak](https://ts.makerdao.com/) - For governance meeting conference calls
+
 [SoundCloud](https://soundcloud.com/makerdao) - Governance meeting recordings
+
 [Oasis](https://pro.oasisdex.com/) - MKR and Dai decentralized exchange
 
