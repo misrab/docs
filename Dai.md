@@ -5,7 +5,7 @@ title: Dai Credit System Simplified, v0.8
 ---
 
 # The Dai Credit System
-**https://dai.foundation/**
+**https://makerdao.com/**
 
 **Rune Christensen, Nikolai Mushegian, Daniel Brockman, Kenny Rowe, Andy Milenius, Ryan Zurrer**
 
@@ -18,7 +18,7 @@ The Dai Credit System is a decentralized platform that backs the value of Dai: a
  
 ## Introduction
 
-Hayek postulates that the most successful form of money in an economy of competing private currencies would be the one with the most stable value, i.e. the one that has least volatility against a consumer price index. A cryptocurrency with price stability is a crucial component of the blockchain economy, because the majority of interesting Decentralized Applications require a stable medium of exchange to be usable. Popular cryptocurrencies and digital assets such as Bitcoin (BTC) and Ether (ETH) are far too volatile to let individuals and businesses plan their activities appropriately with the confidence that the value that is in their wallet today will be roughly the value that is in their wallet tomorrow. As such it will be necessary to have a cryptocurrency with price stability before widespread adoption of blockchain technology can happen, and there will likely be a single winner in the competition for blue ocean market share: The cryptocurrency with the highest degree of price stability.
+Hayek postulates that the most successful form of money in an economy of competing private currencies would be the one with the most stable value, i.e. the one that has least volatility against a consumer price index. A cryptocurrency with price stability is a crucial component of the blockchain economy, because the majority of interesting Decentralized Applications require a stable medium of exchange to be usable. Popular cryptocurrencies and digital assets such as Bitcoin (BTC) and Ether (ETH) are far too volatile to let individuals and businesses plan their activities appropriately with the confidence that the value that is in their wallet today will be roughly the value that is in their wallet tomorrow. It will be necessary to have cryptocurrencies with price stability before widespread adoption of blockchain technology can happen, and there will likely be a single winner in the competition for blue ocean market share amongst these currencies: The one with the highest degree of price stability.
 
 While there is a range of projects in the blockchain space aiming to create cryptocurrency with price stability, the majority use a centralized custodian of the funds or some kind of trusted third party, which erases many of the benefits offered by the decentralized applications they are used on, and limits their ability to interconnect and synergize in a permissionless manner. For a price-stable cryptocurrency to fit coherently into the decentralized ecosystem, such a token must adhere to the principles of decentralization.
 
