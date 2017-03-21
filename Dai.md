@@ -14,7 +14,7 @@ title: Dai Credit System Simplified, v0.8
 
 ## Abstract
 
-The Dai Credit System is a decentralized platform that backs the value of Dai: a cryptocurrency with price stability, that aims to become a new world currency. The Dai Credit System relies on MKR, a highly volatile digital asset that gives its holders financial exposure to the success and user adoption of Dai. MKR is also used for Risk Management of The Dai Credit System. The Zug, Switzerland-based Dai Foundation is responsible for the development of the Dai Credit System. Independent actors known as Keepers support the Dai Credit System through a variety of self-incentivized activities, such as arbitrage seeking, market making, closing under-collateralized CDPs and other utility services necessary for the operation of the Credit System. Keepers will offer Dai to the general market and to mainstream users, making it easy for anyone to use Dai as money without needing to understand the complex mechanisms that back Dai price stability.
+The Dai Credit System is a decentralized platform that backs the value of Dai: a cryptocurrency with price stability, that aims to become a new world currency. The Dai Credit System relies on MKR, a highly volatile digital asset that gives its holders financial exposure to the success and user adoption of Dai. MKR is also used for Risk Management of the Dai Credit System. The Zug, Switzerland-based Dai Foundation is responsible for the development of the Dai Credit System. Independent actors known as Keepers support the Dai Credit System through a variety of self-incentivized activities, such as arbitrage seeking, market making, closing under-collateralized CDPs and other utility services necessary for the operation of the Credit System. Keepers will offer Dai to the general market and to mainstream users, making it easy for anyone to use Dai as money without needing to understand the complex mechanisms that back Dai price stability.
  
 ## Introduction
 
@@ -25,11 +25,11 @@ While there is a range of projects in the blockchain space aiming to create cryp
 
 ## The Basic Mechanics & Economic Thesis of the Dai Credit System
 
-Dai is a cryptocurrency that is backed by other digital assets as collateral. Any user can create Dai by borrowing against collateral they cryptographically lock inside The Dai Credit System. The collateral and Dai-denominated debt are contained in a smart contract called a Collateralized Debt Position (CDP for short). CDPs are owned by a users private key, and can be freely transferred to other users as if it was a digital asset, however CDP’s are not fungible with each other.
+Dai is a cryptocurrency that is backed by other digital assets as collateral. Any user can create Dai by borrowing against collateral they cryptographically lock inside the Dai Credit System. The collateral and Dai-denominated debt are contained in a smart contract called a Collateralized Debt Position (CDP for short). CDPs are owned by a users private key, and can be freely transferred to other users as if it was a digital asset, however CDP’s are not fungible with each other.
 
 Usually only advanced users will use CDPs, and immediately after borrowing Dai with a CDP they will sell the Dai on the market to regular stability-seeking users (who demand Dai for use as money). CDP users do not demand price stability, on the contrary they demand leveraged exposure to the assets used as collateral in their CDP (see Example 2 below for an explanation on how leverage exposure is achieved with CDPs).
 
-The solvency of The Dai Credit System is protected by a set of Risk Parameters, which are directly controlled by holders of the MKR digital asset through voting (One MKR gives one vote).
+The solvency of the Dai Credit System is protected by a set of Risk Parameters, which are directly controlled by holders of the MKR digital asset through voting (One MKR gives one vote).
 
 The price of Dai in the open market is kept stable around a variable Target Price, denominated in SDR. At launch the Target Price is initially set to be equal to approximately 1 USD (~0.75 SDR).
 
@@ -49,7 +49,7 @@ In order for the system to take over the collateral of the CDP so it can be sold
 
 In parallel, the collateral of the CDP is sold off in a Collateral Auction where all proceeds (also denominated in Dai) up to the CDP debt amount plus a Liquidation Penalty (another Risk Parameter determined by MKR voting) is used to buy up MKR and remove it from circulation (directly counteracting the MKR dilution that happened during the Debt Auction). If enough Dai is bid to fully cover the CDP debt plus the Liquidation Penalty, the Collateral Auction switches to a reverse bid mechanism and tries to sell as little collateral as possible; any leftover collateral is returned to the original owner of the CDP.
 
-During normal operation of The Dai Credit System, CDP’s continually accumulate a Stability Fee (the rate of accumulation is determined by the Stability Fee Risk Parameter). When a CDP is closed by the CDP user during normal operation, the Dai accumulated by the Stability Fee is used to perform "Buy&Burn", automatically buying up MKR from the market and permanently removing it from circulation. This results in a continuous cash flow from CDP users to MKR holders as long as the system remains solvent.
+During normal operation of the Dai Credit System, CDP’s continually accumulate a Stability Fee (the rate of accumulation is determined by the Stability Fee Risk Parameter). When a CDP is closed by the CDP user during normal operation, the Dai accumulated by the Stability Fee is used to perform "Buy&Burn", automatically buying up MKR from the market and permanently removing it from circulation. This results in a continuous cash flow from CDP users to MKR holders as long as the system remains solvent.
 
 Liquidations aren't guaranteed to be profitable even if triggered when the collateral-to-debt ratio of the CDP is positive. Slippage during a market crash could cause the Collateral Auction to burn less MKR than what was diluted from the Debt Auction, resulting in net loss for MKR holders and a net increase of the MKR supply. 
 Target Price, Target Rate, and the Sensitivity Parameter
