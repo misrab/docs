@@ -4,7 +4,7 @@ layout: page
 title: Dai Credit System Simplified, v0.8
 ---
 
-#The Dai Credit System
+# The Dai Credit System
 **https://dai.foundation/**
 
 **Rune Christensen, Nikolai Mushegian, Daniel Brockman, Kenny Rowe, Andy Milenius, Ryan Zurrer**
@@ -12,20 +12,18 @@ title: Dai Credit System Simplified, v0.8
 
 *This is a condensed overview of the Dai Credit System as defined in the “Purple Paper”: http://stablecoin.technology/purple.pdf. The Purple Paper is a formal specification and reference implementation that is modified by an RFC process.*
 
-##Abstract
+## Abstract
 
 The Dai Credit System is a decentralized platform that backs the value of Dai: a cryptocurrency with price stability, that aims to become a new world currency. The Dai Credit System relies on MKR, a highly volatile digital asset that gives its holders financial exposure to the success and user adoption of Dai. MKR is also used for Risk Management of The Dai Credit System. The Zug, Switzerland-based Dai Foundation is responsible for the development of the Dai Credit System. Independent actors known as Keepers support the Dai Credit System through a variety of self-incentivized activities, such as arbitrage seeking, market making, closing under-collateralized CDPs and other utility services necessary for the operation of the Credit System. Keepers will offer Dai to the general market and to mainstream users, making it easy for anyone to use Dai as money without needing to understand the complex mechanisms that back Dai price stability.
  
-##Introduction
+## Introduction
 
 Hayek postulates that the most successful form of money in an economy of competing private currencies would be the one with the most stable value, i.e. the one that has least volatility against a consumer price index. A cryptocurrency with price stability is a crucial component of the blockchain economy, because the majority of interesting Decentralized Applications require a stable medium of exchange to be usable. Popular cryptocurrencies and digital assets such as Bitcoin (BTC) and Ether (ETH) are far too volatile to let individuals and businesses plan their activities appropriately with the confidence that the value that is in their wallet today will be roughly the value that is in their wallet tomorrow. As such it will be necessary to have a cryptocurrency with price stability before widespread adoption of blockchain technology can happen, and there will likely be a single winner in the competition for blue ocean market share: The cryptocurrency with the highest degree of price stability.
 
-While there is a range of projects in the blockchain space aiming to create cryptocurrency with price stability, the majority use a centralized custodian of the funds or some kind of trusted third party, which erases many of the benefits offered by the decentralized applications they are used on, and limits their ability to interconnect and synergize in a permissionless manner. For a price-stable cryptocurrency to fit coherently into the decentralized stack known as Web3[1], such a token must adhere to the principles of decentralization.
-
-[1] http://gavwood.com/dappsweb3.html
+While there is a range of projects in the blockchain space aiming to create cryptocurrency with price stability, the majority use a centralized custodian of the funds or some kind of trusted third party, which erases many of the benefits offered by the decentralized applications they are used on, and limits their ability to interconnect and synergize in a permissionless manner. For a price-stable cryptocurrency to fit coherently into the decentralized ecosystem, such a token must adhere to the principles of decentralization.
 
 
-##The Basic Mechanics & Economic Thesis of the Dai Credit System
+## The Basic Mechanics & Economic Thesis of the Dai Credit System
 
 Dai is a cryptocurrency that is backed by other digital assets as collateral. Any user can create Dai by borrowing against collateral they cryptographically lock inside The Dai Credit System. The collateral and Dai-denominated debt are contained in a smart contract called a Collateralized Debt Position (CDP for short). CDPs are owned by a users private key, and can be freely transferred to other users as if it was a digital asset, however CDP’s are not fungible with each other.
 
@@ -39,7 +37,7 @@ The stability of the Dai around the Target Price is maintained by modifying the 
 
 As such, Dai is not a pegged currency: It does not maintain a constant peg to an existing fiat currency. Rather it is a free floating currency that has low volatility against other currencies, comparable to the volatility of e.g. USD vs EUR (In the long run; during its early stages it will be more volatile).
 
-##Liquidation and Shoring-up Liquidity
+## Liquidation and Shoring-up Liquidity
 
 To ensure there is always enough collateral in the system to cover the value of all outstanding Dai (according to the Target Price), a CDP can be Liquidated if it is deemed too risky. The Dai Credit System decides when to liquidate a CDP by comparing the Risk Parameter called the Liquidation Ratio with the collateral-to-debt ratio in the CDP. 
 
@@ -63,44 +61,45 @@ The same mechanism works in reverse if the Dai market price is higher than the T
 
 This mechanism is a negative feedback loop: Deviation away from the Target Price in one direction increases the force in the opposite direction. The magnitude of the Target Rate adjustments depends on how long the market price remains on the same side of the Target Price. Longer deviations result in aggressive adjustments, while shorter deviations result in small adjustments.
 
-The Target Price and the Target Rate are entirely determined by market dynamics, and thus not directly controlled by MKR voters. They can only set the feedback mechanism’s Sensitivity Parameter. This parameter determines the magnitude target rate can change in response to Dai target/market price deviation, which allows tuning the rate of feedback to the scale of the system.
+The Target Price and the Target Rate are entirely determined by market dynamics, and thus not directly controlled by MKR voters. They can only set the feedback mechanism’s Sensitivity Parameter. This is a global parameter that determines the magnitude target rate can change in response to Dai target/market price deviation, which allows tuning the rate of feedback to the scale of the system. The Sensitivity Parameter is not considered a Risk Parameter because it doesn't impact Dai solvency.
 
-##Risk Management of The Dai Credit System
+## Risk Management of The Dai Credit System
 
 The MKR asset allows holders to vote to perform the following Risk Management actions:
-Add new CDP type: Creates a new CDP type with a unique set of Risk parameters.
-Modify existing CDP types: Change the Risk Parameters of one or more Existing CDP types that were already added.
-Modify the Sensitivity Parameter.
-Choose the set of trusted oracles. The Dai Credit System derives its internal prices for collateral and the market price of Dai based on the median of the set of trusted oracles. This ensures consistent operation of the system even in the event that up to half of the oracles suffer a technical failure.
 
-##Risk Parameters
+* Add new CDP type: Creates a new CDP type with a unique set of Risk parameters.
+* Modify existing CDP types: Change the Risk Parameters of one or more Existing CDP types that were already added.
+* Modify the Sensitivity Parameter.
+* Choose the set of trusted oracles. The Dai Credit System derives its internal prices for collateral and the market price of Dai based on the median of the set of trusted oracles. This ensures consistent operation of the system even in the event that up to half of the oracles suffer a technical failure.
+
+## Risk Parameters
 
 Collateralized Debt Positions of The Dai Credit System have multiple Risk Parameters. Each CDP Type has its own unique set of Risk Parameters, and these parameters are determined based on the risk profile of the collateral used by the CDP Type. The parameters are directly controlled by MKR holders through voting, with one MKR giving its holder one vote.
 
-###Debt Ceiling
+### Debt Ceiling
 
 Debt ceiling is the maximum amount of debt that can be created by a single type of CDP. Once enough debt has been created by CDPs of a given type, it becomes impossible to create more unless existing CDPs are closed.
 The debt ceiling is used to ensure sufficient diversification of the collateral portfolio.
 
-###Liquidation Ratio
+### Liquidation Ratio
 
 Liquidation ratio is the collateral-to-debt ratio at which a CDP becomes vulnerable to Liquidation. A low Liquidation Ratio means MKR voters expect low price volatility of the collateral, while a high Liquidation Ratio means high volatility is expected.
 
-###Stability Fee
+### Stability Fee
 
 The Stability Fee is a fee paid by every CDP. It is defined as a yearly percentage that is calculated on top of the existing debt of the CDP. When the borrower covers their CDP, the Dai used to cover the CDP debt is destroyed, but the Dai used to pay the Stability Fee isn’t destroyed, instead it is sent to Buy&Burn.
 A higher Stability Fee represents a higher expected rate of sudden death for the collateral (such as a hack or severe disaster instantly rendering the asset completely worthless).
 
-###Penalty ratio
+### Penalty ratio
 
 The penalty ratio is used to determined the maximum amount of Dai raised from a Liquidation Auction that goes to Buy&Burn, with excess collateral getting returned to the borrower who originally created the CDP. This is achieved with a two-way auction.
 The penalty ratio is used to cover the inefficiency of the liquidation mechanism.
 
-###Limbo Duration
+### Limbo Duration
 
 A CDP enters limbo in the unlikely event that price information for collateral is not available (such as if all the oracles simultaneously suffer a technical failure). The limbo duration determines how long before all CDPs of that type are liquidated.
 
-##Examples
+## Examples
 
 **Example 1:** Bob wants to borrow 100 Dai. He locks an amount of ETH worth significantly more than 100 Dai into a CDP and uses it to borrow 100 Dai. The 100 Dai is instantly sent directly to his Ethereum account. Assuming that the Stability Fee is 1% per year, Bob will need 101 Dai to cover the CDP if he decides to retrieve his ETH after one year.
 
@@ -120,18 +119,18 @@ A keeper is an independent actor that is incentivized by profit opportunities to
 
 Keepers also trade Dai around the Target Price. Keepers will want to sell Dai when the market price is higher than the Target Price. Similarly, keepers buy Dai when the market price is below the Target Price. This is in order to profit from the expected long-term convergence towards the Target Price.
 
-##Oracles: Providing Price Feeds
+## Oracles: Providing Price Feeds
 
 Another crucial group of external actors that Maker requires to function are price feed oracles. Oracles are independent external actors or decentralized applications that provide a data feed onto the blockchain for smart contracts to consume. The Dai Credit System needs information about the market price of the Dai and its deviation from the Target Price in order to adjust the target rate. It also needs information about the market price of the assets used as collateral in CDPs, in order to know when liquidations should be triggered.
 
-##Development Road Map
+## Development Road Map
 The Dai Credit System has been in development since March 2015 when it was announced under the name eDollar. [1] The Dai Foundation currently intends to launch the SimpleCoin research platform by Q2-2017 with the purpose of creating a simplified and controlled environment for testing the market dynamics that will be present in The Dai Credit System. For a detailed breakdown of future plans and tentative deadlines, please see the Maker blog post regarding the comprehensive Product Roadmap.[2]
  
-##Design Goals
+## Design Goals
 The current design of The Dai Credit System is the result of almost 2 years of iterations on the concept of a cryptocurrency with price stability backed by digital assets as collateral. We take every opportunity we see to make reductions and simplifications based on things that are theoretically equivalent under an economic incentive analysis. For example, cash flow to MKR holders is represented as Buy&Burn rather than dividends, as their economic impact is equivalent but Buy&Burn is less complex to implement with smart contracts. This later ended up yielding returns when it enabled us to massively simplify the CDP lifecycle and liquidation processes.
 Another design goal was to ensure all operations were constant space and time. This introduced some challenges as the system simulates multiple sets of continuously growing or shrinking balances and most state is actually function of multiple real-time variables.
 
-##Addressable Market
+## Addressable Market
 
 As mentioned above, a cryptocurrency with price stability is a basic requirement for the majority of decentralized applications, and as such the potential market for Dai is at least as large as the entire blockchain industry. The following is a short non-exhaustive list of some of the immediate markets (both blockchain industry and wider industry) for The Dai Credit System, in its capacity as a cryptocurrency with price stability, and its use case as a decentralized credit platform:
 
@@ -141,9 +140,9 @@ As mentioned above, a cryptocurrency with price stability is a basic requirement
 
  **Merchant receipts, Cross-border transactions and remittances:** Forex volatility mitigation and lack of middlemen means the transaction costs of international trade can be significantly reduced by using Dai.
  
-##Primary Risks and their Mitigation
+## Primary Risks and their Mitigation
  
-###Malicious hacking attack against the smart contract infrastructure
+### Malicious hacking attack against the smart contract infrastructure
 
 The greatest risk to the system during its early stages is the risk of a malicious programmer finding an exploit in the deployed smart contracts, and using it to break or steal from the system before the vulnerability can be fixed. Worst case scenario all decentralized digital assets that are held as collateral in The Dai Credit System such as Ether or Augur Reputation could be stolen without any chance of recovery. The part of the collateral portfolio that is not decentralized, such as Digix Gold IOU’s, would not be stolen in such an event because they can be frozen and controlled through a centralized backdoor.
 
@@ -153,12 +152,12 @@ The more general and long term mitigation strategy is to invest heavily in an in
 
 In the very long term, the risk of getting hacked can theoretically be completely mitigated through formal verification of the code, which means using functional programming to mathematically prove that the codebase does not contain exploit. While complete formal verification is a very long term goal, significant work towards it has already been done, including creating a full implementation of The Dai Credit System in the functional programming language Haskell.
 
-###Black Swan Event in one or more Collateral assets
+### Black Swan Event in one or more Collateral assets
 The highest impact risk is a potential Black Swan event on collateral used for the Dai, possibly in the early stages of Dai Credit System or prior to a point where MKR is robust enough to support inflation moments or a moment where the Dai Credit system supports a diverse portfolio of collateral.
 
 **Mitigation:** CDP collateral will be limited to ETH in the early stages and the debt ceiling will be limited initially and will grow over time. Also, simple coin should provide pertinent lessons learned potentially including new Stability Levers.
  
-###Competition & The Importance of Ease-of-Use
+### Competition & The Importance of Ease-of-Use
 As mentioned above, there is a lot of money and brainpower working on cryptocurrency with price stability in the blockchain industry. By virtue of having “true decentralization”, The Dai Credit System is by far the most complex model and we may see a movement among cryptocurrency users where the ideals of decentralization are exchanged for the simplicity and marketing of centralized digital assets.
 
 **Mitigation:** We expect that Dai will actually be quite easy to use for regular a crypto-user. The token will be a standard Ethereum token and easily available with high liquidity across the ecosystem. 
@@ -167,22 +166,22 @@ We will also invest heavily in core branding and international educational mater
 
 The complexities of the Dai Credit System will need to be understood primarily by Keepers and sophisticated capital investment companies that use the Dai Credit System for advanced financial purposes. While we appreciate that The Dai Credit System can be difficult to understand for the laymen, it is not impossible to grasp and most individuals interested in cryptocurrency won’t need to understand all of the components of the system, similarly to the fact that most Ether holders don’t understand the complexities of Ethereum.
  
-###Pricing Errors, Irrationality & Unforeseen Events
+### Pricing Errors, Irrationality & Unforeseen Events
 
 A number of unforeseen events could potentially occur such as a problem with the price feed from the Oracles or other unexpected event such as irrational market dynamics that cause variation in the value of Dai for an extended period. If confidence is lost in the system, the deflation rate adjustment or even MKR dilution could hit extreme levels and still not bring liquidity and stability to the market.
 
 **Mitigation:** The Maker community will need to incentivize a sufficiently large capital pool to act as Keepers of the market in order to maximize rationality and market efficiency as well as grow the Dai Credit System gradually at a steady pace. The Dai Foundation will also deploy its large capital reserves to act as a keeper, and this should ensure that even in the complete absense of any other well capitalized keepers in the early stages of the system, the Dai Foundation alone will be enough to keep the system rational.
 
-###Failure of centralized infrastructure
+### Failure of centralized infrastructure
 
 The Dai Foundation will play a major role in the development and governance of the Dai Credit System in its early days - budgeting for expenses, hiring new developers, seeking partnerships and institutional users, interfacing with regulators and other key external stakeholders. Should the Dai Foundation fail in some capacity, for legal reasons or due to internal problems with management, the future of the Dai Credit System could be at risk without a proper backup plan.
 
 **Mitigation:** The Maker community exists partly to act as the decentralized counterparty to the Dai Foundation. It is a loose collective of independent actors who are all aligned by holding the MKR digital asset, giving them a strong incentive to see the Dai Credit System become a success. During the early phases of MKR distribution, great care was taken to ensure that the most important core developers all received a significant MKR stake. In the event that the Dai Foundation is no longer able to be at the forefront of continued development of the Dai Credit System, large individual MKR holders will be incentivized to fund developers, or develop themselves, in an effort to protect their investment.
 
-##Conclusion
+## Conclusion
 The Dai Credit System was designed to solve the crucial problem of stable exchange of value in the Ethereum ecosystem and wider blockchain economy. We believe that the mechanism through which Dai is created, transacted and retired along with the direct Risk Management by MKR holders allows for self-interested Keepers to maintain the price stability of Dai over time in an efficient manner. Early economic modelling has resulted in positive feedback around this hypothesis and we expect the SimpleCoin research platform to yield even more informative data points. The founders of The Dai Credit System have established a prudent governance roadmap that is appropriate for needs of agile development in the short term but also coherent with the ideals of decentralization over time. The development roadmap is aggressive and focused on widespread adoption of Dai in a responsible fashion. We are excited about the prospects of The Dai Credit System and hope to get feedback and contribution from the entire blockchain community, as it will be crucial in realizing such a grand project.
 
-##Glossary of Terms
+## Glossary of Terms
  
 **Collateralized Debt Position (CDP):** A smart contract whose users receives an asset (Dai), which effectively operates as a debt instrument with an interest rate. The CDP user has posted collateral in excess of the value of the loan in order to guarantee their debt position.
 
@@ -212,12 +211,7 @@ The Dai Credit System was designed to solve the crucial problem of stable exchan
 
 **Target Rate Feedback Mechanism**: means the way the Dai Credit System adjusts the Target Rate to cause market forces to maintain stability around the Target Rate.
 
-[1]https://www.reddit.com/r/ethereum/comments/30f98i/introducing_edollar_the_ultimate_stable coin_built/?st=ixi8hyd7&sh=d995d720
-[2] https://blog.makerdao.com/2016/12/02/2017-product-roadmap/
- 
-[3] http://bitcoinist.com/stablecoins-economics/
-
-**Links:**
+## Links
 [Chat](https://chat.makerdao.com/) - Primary platform of community interaction
 [Forum](https://forum.makerdao.com/) - For debate and proposals
 [Subreddit](https://reddit.com/r/makerdao) - Best place to get latest news and links
