@@ -52,7 +52,9 @@ In parallel, the collateral of the CDP is sold off in a Collateral Auction where
 During normal operation of the Dai Credit System, CDP’s continually accumulate a Stability Fee (the rate of accumulation is determined by the Stability Fee Risk Parameter). When a CDP is closed by the CDP user during normal operation, the Dai accumulated by the Stability Fee is used to perform "Buy&Burn", automatically buying up MKR from the market and permanently removing it from circulation. This results in a continuous cash flow from CDP users to MKR holders as long as the system remains solvent.
 
 Liquidations aren't guaranteed to be profitable even if triggered when the collateral-to-debt ratio of the CDP is positive. Slippage during a market crash could cause the Collateral Auction to burn less MKR than what was diluted from the Debt Auction, resulting in net loss for MKR holders and a net increase of the MKR supply. 
-Target Price, Target Rate, and the Sensitivity Parameter
+
+## Target Price, Target Rate, and the Sensitivity Parameter
+
 The Dai Target Price is used to determine the collateral-to-debt ratio of a CDP, and thus the Target Price represents the price at which Dai is backed by collateral in the long term. The Target Price is continuously adjusted according to the current Target Rate. Automatic Target Rate adjustments continuously ensure that the Dai market price remains stabilized around the Target Price in the short term. 
 
 When the market price of Dai is below the Target Price, the Target Rate increases, causing borrowing to become more expensive. This leads to CDP users covering their CDPs and leaving the ecosystem, causing the outstanding supply of Dai to decrease. At the same time, the increased Target Rate causes the capital gains from holding Dai to go up, leading to a corresponding increase in Dai demand. This combination of reduced supply and increased demand causes the Dai market price to increase, pushing it up towards the Target Price.
@@ -115,7 +117,7 @@ Need some bridging / context here, this is from when I copy/pasted the examples 
 **Example 4:** If we assume that Ether has a liquidation ratio of 145%, a penalty ratio of 105%, and an Ether-CDP is outstanding at 150% collateral ratio, the Ether price crashes 10% against the Target Price. This causes the collateral ratio of the CDP to fall to ~135%. As it falls below its liquidation ratio, traders can trigger its liquidation and begin bidding with Dai for buying MKR in the debt auction. Traders can also begin bidding with Dai for buying the ~135 Dai worth of collateral in the collateral auction. Once there is at least 105 Dai being bid on the Ether collateral, traders reverse bid to take the least amount of collateral for 105 Dai and the remainder is returned to the original borrower.
 
 ## Keepers: Keeping the system rational and economically efficient
-A keeper is an independent actor that is incentivized by profit opportunities to contribute to decentralized systems. In the context of The Dai Credit System, keepers participate in the Debt Auctions and Collateral Auctions when CDP are liquidated, and the Buy&Burn auctions that continuously happen during normal operation of the system.
+A keeper is an independent actor that is incentivized by profit opportunities to contribute to decentralized systems. In the context of The Dai Credit System, keepers participate in the Debt Auctions and Collateral Auctions when CDPs are liquidated, and the Buy&Burn auctions that continuously happen during normal operation of the system.
 
 Keepers also trade Dai around the Target Price. Keepers will want to sell Dai when the market price is higher than the Target Price. Similarly, keepers buy Dai when the market price is below the Target Price. This is in order to profit from the expected long-term convergence towards the Target Price.
 
@@ -146,7 +148,7 @@ There are many potential risks facing the successful development, deployment and
  
 ### Malicious hacking attack against the smart contract infrastructure
 
-The greatest risk to the system during its early stages is the risk of a malicious programmer finding an exploit in the deployed smart contracts, and using it to break or steal from the system before the vulnerability can be fixed. Worst case scenario all decentralized digital assets that are held as collateral in The Dai Credit System such as Ether or Augur Reputation could be stolen without any chance of recovery. The part of the collateral portfolio that is not decentralized, such as Digix Gold IOU’s, would not be stolen in such an event because they can be frozen and controlled through a centralized backdoor.
+The greatest risk to the system during its early stages is the risk of a malicious programmer finding an exploit in the deployed smart contracts, and using it to break or steal from the system before the vulnerability can be fixed. In a worst case scenario, all decentralized digital assets that are held as collateral in The Dai Credit System, such as Ether or Augur Reputation, could be stolen without any chance of recovery. The part of the collateral portfolio that is not decentralized, such as Digix Gold IOU’s, would not be stolen in such an event because they can be frozen and controlled through a centralized backdoor.
 
 **Mitigation:** During the early stages of deployment, The Dai Credit System will have emergency security features that allows oracles to enact global settlement of the system if they detect a security breach. Global settlement will mean that all dai is destroyed, and dai holders are automatically transferred digital assets from the CDPs with a value equal to the Target Price of the dai they were holding (with the leftover collateral going to CDP users, as if their CDP had been liquidated). This feature will mean the system can deflect attacks that allow the attacker to slowly drain assets out of the smart contracts, but does not defend against attacks that allow the attacker to instantly drain all the collateral at once.
 
@@ -162,7 +164,7 @@ The highest impact risk is a potential Black Swan event on collateral used for t
 ### Competition & The Importance of Ease-of-Use
 As mentioned above, there is a lot of money and brainpower working on cryptocurrency with price stability in the blockchain industry. By virtue of having “true decentralization”, The Dai Credit System is by far the most complex model and we may see a movement among cryptocurrency users where the ideals of decentralization are exchanged for the simplicity and marketing of centralized digital assets.
 
-**Mitigation:** We expect that Dai will actually be quite easy to use for regular a crypto-user. The token will be a standard Ethereum token and easily available with high liquidity across the ecosystem. 
+**Mitigation:** We expect that Dai will actually be quite easy to use for a regular crypto-user. The token will be a standard Ethereum token and easily available with high liquidity across the ecosystem. 
 
 We will also invest heavily in core branding and international educational material during the initial launch of the system, and if resources permit it, the Dai Foundation will use the surplus of its MKR holdings on charity projects, which if done correctly and on a large enough scale, will guarantee positively biased exposure in mainstream media.
 
@@ -170,7 +172,7 @@ The complexities of the Dai Credit System will need to be understood primarily b
  
 ### Pricing Errors, Irrationality & Unforeseen Events
 
-A number of unforeseen events could potentially occur such as a problem with the price feed from the Oracles or other unexpected event such as irrational market dynamics that cause variation in the value of Dai for an extended period. If confidence is lost in the system, the deflation rate adjustment or even MKR dilution could hit extreme levels and still not bring liquidity and stability to the market.
+A number of unforeseen events could potentially occur, such as a problem with the price feed from the Oracles or other unexpected events such as irrational market dynamics that cause variation in the value of Dai for an extended period. If confidence is lost in the system, the deflation rate adjustment or even MKR dilution could hit extreme levels and still not bring liquidity and stability to the market.
 
 **Mitigation:** The Maker community will need to incentivize a sufficiently large capital pool to act as Keepers of the market in order to maximize rationality and market efficiency as well as grow the Dai Credit System gradually at a steady pace. The Dai Foundation will also deploy its large capital reserves to act as a keeper, and this should ensure that even in the complete absense of any other well capitalized keepers in the early stages of the system, the Dai Foundation alone will be enough to keep the system rational.
 
@@ -185,15 +187,15 @@ The Dai Credit System was designed to solve the crucial problem of stable exchan
 
 ## Glossary of Terms
  
-**Collateralized Debt Position (CDP):** A smart contract whose users receives an asset (Dai), which effectively operates as a debt instrument with an interest rate. The CDP user has posted collateral in excess of the value of the loan in order to guarantee their debt position.
+**Collateralized Debt Position (CDP):** A smart contract whose users receive an asset (Dai), which effectively operates as a debt instrument with an interest rate. The CDP user has posted collateral in excess of the value of the loan in order to guarantee their debt position.
 
-**Dai:** The cryptocurrency with price stability that is the asset of exchange in Dai Credit System. It is a standard Ethereum token adhering to the ERC20 standard.
+**Dai:** The cryptocurrency with price stability that is the asset of exchange in the Dai Credit System. It is a standard Ethereum token adhering to the ERC20 standard.
 
 **Debt Auction:** the continuous MKR reverse-auction to cover Emergency Debt needs.
 
-**Surplus Auction:** the continuous MKR buy-and-burn auction using collected fees (interest from CDPs) and also proceeds from collateral auctions
+**Surplus Auction:** the continuous MKR buy-and-burn auction using collected fees (interest from CDPs) and also proceeds from collateral auctions.
 
-**Collateral Auction:** An auction designed to prioritize covering debt owed by a CDP, then to give the owner the best price possible for their collateral refund
+**Collateral Auction:** An auction designed to prioritize covering debt owed by a CDP, then to give the owner the best price possible for their collateral refund.
  
 **The Dai Foundation:** A non-profit foundation based in Zug, Switzerland, registered as MakerDai Stiftung which exists to support the development of The Dai Credit System software infrastructure.
  
@@ -201,17 +203,17 @@ The Dai Credit System was designed to solve the crucial problem of stable exchan
 
 **MKR:** The ERC20 token that is used by MakerDAO for voting as well as used as a backstop in the case of insolvent CDPs.
 
-**MKR Voters:** MKR holders who actively manage the risk of The Dai Credit System by voting on Risk Parameters
+**MKR Voters:** MKR holders who actively manage the risk of The Dai Credit System by voting on Risk Parameters.
 
-**Maker:** A name used to refer to the aggregate agency of the community of active MKR holders and voters
+**Maker:** A name used to refer to the aggregate agency of the community of active MKR holders and voters.
 
 **Oracles:** Ethereum accounts (contracts or users) selected to provide price feeds into various components of The Dai Credit System.
 
 **Risk Parameters:** The variables that determine when the Dai Credit System automatically judges a CDP to be Risky, allowing Keepers to liquidate it.
 
-**Sensitivity Parameter:** The variable that determines how aggressively the Dai Credit System automatically changes the Target Rate in response to Dai market price deviations
+**Sensitivity Parameter:** The variable that determines how aggressively the Dai Credit System automatically changes the Target Rate in response to Dai market price deviations.
 
-**Target Rate Feedback Mechanism**: means the way the Dai Credit System adjusts the Target Rate to cause market forces to maintain stability around the Target Rate.
+**Target Rate Feedback Mechanism:** means the way the Dai Credit System adjusts the Target Rate to cause market forces to maintain stability around the Target Rate.
 
 ## Links
 [Chat](https://chat.makerdao.com/) - Primary platform of community interaction
