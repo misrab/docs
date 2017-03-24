@@ -16,7 +16,6 @@ title: Dai Credit System Simplified, v0.8
 
 In this paper we propose a new digital currency called Dai that automatically reacts to emergent market conditions in order to stabilize its  value with respect to the world's most popular national currencies. Dai is created by the Dai Credit System, a unique computer program that runs on the Ethereum blockchain. The Dai Credit System uses dynamic incentives to ensure that every outstanding Dai token is backed by assets with real world value. The Dai Credit System itself is maintained by those who own a separate token called Maker (MKR). The value of MKR is directly tied to the health of the Dai Credit System, meaning that its holders are incentivized to work together and act as responsible regulators of the Dai token.
 
- 
 ## Introduction
 
 The blockchain revolution has long been touted as the key to many seemingly intractable global problems, from mundane topics like international remittances to lofty ambitions like financial inclusion and financial sovereignty for all humanity. However, the process of mainstream adoption has been slow due to one harsh reality: price volatility. 
@@ -25,29 +24,29 @@ Hayek postulates that the most successful form of money in an economy of competi
 
 While there is a range of projects in the blockchain space aiming to create cryptocurrency with price stability, the majority use a centralized custodian of the funds or some kind of trusted third party, which erases many of the benefits offered by the decentralized applications they are used on, and limits their ability to interconnect and synergize in a permissionless manner. For a price-stable cryptocurrency to fit coherently into the decentralized ecosystem, it must adhere to the principles of decentralization.
 
-## The Basic Mechanics
+## Basic Mechanics
 
-Dai is a cryptocurrency that is backed by other digital assets as collateral. Any user can create Dai by borrowing against collateral they cryptographically lock inside the Dai Credit System. The collateral and Dai-denominated debt are contained in a smart contract called a Collateralized Debt Position (CDP for short). CDPs are owned by a users private key, and can be freely transferred to other users as if it was a digital asset, however CDP’s are not fungible with each other.
+Dai is a cryptocurrency backed by other digital assets used as collateral. Any user can create Dai by borrowing against collateral which they cryptographically lock inside the Dai Credit System. The collateral and Dai-denominated debt are contained in a smart contract called a Collateralized Debt Position (CDP). A CDP is owned by a user's private key, and can be freely transferred to other users like any digital asset. However, CDPs are not fungible with each other.
 
-Usually only advanced users will use CDPs, and immediately after borrowing Dai with a CDP they will sell the Dai on the market to regular stability-seeking users (who demand Dai for use as money). CDP users do not demand price stability, on the contrary they demand leveraged exposure to the assets used as collateral in their CDP (see Example 2 below for an explanation on how leverage exposure is achieved with CDPs).
+Only advanced users will use CDPs directly. Immediately after borrowing Dai with a CDP they would usually sell the Dai on the market to regular stability-seeking users who demand Dai for use as money. Hence, CDP users are not themselves necessarily interested in price stability. In fact, they are probably looking for leveraged exposure to the assets used as collateral in their CDP. (See Example 2 below for an explanation on how leverage is achieved with CDPs.)
 
-The solvency of the Dai Credit System is protected by a set of Risk Parameters, which are directly controlled by holders of the MKR digital asset through voting (One MKR gives one vote).
+The solvency of the Dai Credit System is protected by a set of Risk Parameters, which are directly controlled by holders of the MKR digital asset through voting. One MKR gives one vote.
 
 The price of Dai in the open market is kept stable around a variable Target Price, denominated in SDR. At launch the Target Price is initially set to be equal to approximately 1 USD (~0.75 SDR).
 
-The stability of the Dai around the Target Price is maintained by modifying the incentives for borrowing and holding Dai via the Target Rate Feedback Mechanism. This is an automatic mechanism which absorbs some of the volatility of Dai and transfers the risk to the CDP users during periods of significant liquidity shortfalls.
+The stability of the Dai around the Target Price is maintained by a fully automatic subsystem, known as the Target Rate Feedback Mechanism, which continuously modifies the incentives for borrowing and holding Dai. This feedback mechanism absorbs some of the volatility of Dai and transfers the risk to the CDP users during periods of significant liquidity shortfalls.
 
-As such, Dai is not a pegged currency: It does not maintain a constant peg to an existing fiat currency. Rather it is a free floating currency that has low volatility against other currencies, comparable to the volatility of e.g. USD vs EUR (In the long run; during its early stages it will be more volatile).
+As such, Dai is not a pegged currency: It does not maintain a constant peg to an existing fiat currency. Rather, it is a free-floating currency that has a low volatility against other currencies &mdash; comparable to the volatility of currency pairs such as USD vs EUR (although it will probably be more volatile during its early stages).
 
 ## Liquidation and Shoring-up Liquidity
 
-To ensure there is always enough collateral in the system to cover the value of all outstanding Dai (according to the Target Price), a CDP can be Liquidated if it is deemed too risky. The Dai Credit System decides when to liquidate a CDP by comparing the Risk Parameter called the Liquidation Ratio with the collateral-to-debt ratio in the CDP. 
+To ensure there is always enough collateral in the system to cover the value of all outstanding Dai (according to the Target Price), a CDP can be liquidated if it is deemed too risky. The Dai Credit System decides when to liquidate a CDP by comparing the Risk Parameter called the Liquidation Ratio with the actual collateral-to-debt ratio of the CDP.
 
 Each type of collateral asset has its own unique Liquidation Ratio controlled by MKR voters and decided based on the risk profile of that particular asset. The Dai Credit System uses Oracles to measure the market price of collateral held in CDPs. Oracles are trusted external actors tasked with providing continuous price data.
 
 Liquidation means that the Dai Credit System automatically buys the collateral of the CDP and subsequently sells it off in an automatic auction. 
 
-In order for the system to take over the collateral of the CDP so it can be sold off, it first needs to raise enough Dai to cover the CDP debt. This is called a Debt Auction, and works by diluting the supply of the MKR digital asset and selling it to the bidders of the Debt Auction. A reverse bid mechanism is used to find the lowest amount of MKR that needs to be diluted in order to cover the CDP debt.
+In order for the system to take over the collateral of the CDP so it can be sold off, it first needs to raise enough Dai to cover the CDP debt. This is called a Debt Auction, and works by diluting the supply of the MKR digital asset and selling it to the bidders of the Debt Auction. In this auction, the system is trying to dilute MKR as little as possible while still covering the debt.
 
 In parallel, the collateral of the CDP is sold off in a Collateral Auction where all proceeds (also denominated in Dai) up to the CDP debt amount plus a Liquidation Penalty (another Risk Parameter determined by MKR voting) is used to buy up MKR and remove it from circulation (directly counteracting the MKR dilution that happened during the Debt Auction). If enough Dai is bid to fully cover the CDP debt plus the Liquidation Penalty, the Collateral Auction switches to a reverse bid mechanism and tries to sell as little collateral as possible; any leftover collateral is returned to the original owner of the CDP.
 
