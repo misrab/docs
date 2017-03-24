@@ -14,7 +14,7 @@ title: Dai Credit System Simplified, v0.8
 
 ## Abstract
 
-*In this paper we propose a new cryptocurrency called Dai that automatically reacts to emergent market conditions in order to stabilize its value. Dai is created by the Dai Credit System, a decentralized platform that runs on the Ethereum blockchain. The Dai Credit System uses dynamic incentives to ensure that the outstanding Dai is provably backed in excess by a collateral portfolio of other Ethereum-based digital assets. The risk of the collateral portfolio is managed by holders of a separate digital asset called MKR. The value of MKR is directly tied to the solvency of the Dai Credit System, meaning that MKR holders are financially incentivized to act as responsible regulators of Dai price stability.*
+*In this paper we propose a new cryptocurrency called Dai that automatically reacts to emergent market conditions in order to stabilize its value. Dai is created by the Dai Credit System, a decentralized platform that runs on the Ethereum blockchain. The Dai Credit System uses dynamic incentives to ensure that the Dai supply is provably backed in excess by a collateral portfolio of other Ethereum-based digital assets. The risk of the collateral portfolio is managed by holders of a separate digital asset called MKR. The value of MKR is directly tied to the solvency of the Dai Credit System, meaning that MKR holders are financially incentivized to act as responsible regulators of Dai price stability.*
 
 ## Introduction
 
