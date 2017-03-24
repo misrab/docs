@@ -229,7 +229,7 @@ The Dai Credit System was designed to solve the crucial problem of stable exchan
 
 [Subreddit](https://reddit.com/r/makerdao) - Best place to get latest news and links
 
-[Wiki](https://github.com/makerdao/wiki/wiki) Learn about the Dai Credit System in greater detail
+[Wiki](https://github.com/makerdao/wiki/wiki) - Learn about the Dai Credit System in greater detail
 
 [GitHub](https://github.com/makerdao) - Repository of the public Dai Credit System code
 
