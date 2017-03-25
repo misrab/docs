@@ -46,7 +46,7 @@ To ensure there is always enough collateral in the system to cover the value of 
 
 Each type of collateral asset has its own unique Liquidation Ratio controlled by MKR voters and decided based on the risk profile of that particular asset. The Dai Credit System uses Oracles to measure the market price of collateral held in CDPs. Oracles are trusted external actors tasked with providing continuous price data.
 
-Liquidation means that the Dai Credit System automatically buys the collateral of the CDP and subsequently sells it off in an automatic auction. 
+Liquidation means that the Dai Credit System automatically buys the collateral of the CDP and subsequently sells it off in an automatic auction. The auction mechanism enables the system to settle CDPs even when price information is unavailable.
 
 In order for the system to take over the collateral of the CDP so it can be sold off, it first needs to raise enough Dai to cover the CDP debt. This is called a Debt Auction, and works by diluting the supply of the MKR digital asset and selling it to the bidders of the Debt Auction. In this auction, the system is trying to dilute MKR as little as possible while still covering the debt.
 
@@ -60,13 +60,13 @@ Liquidations aren't guaranteed to be profitable even if triggered when the colla
 
 The Dai Target Price is used to determine the collateral-to-debt ratio of a CDP, and thus the Target Price represents the price at which Dai is backed by collateral in the long term. The Target Price is continuously adjusted according to the current Target Rate. Automatic Target Rate adjustments continuously ensure that the Dai market price remains stabilized around the Target Price in the short term. 
 
-When the market price of Dai is below the Target Price, the Target Rate increases. This causes the target price to increase, which in turn causes borrowing Dai to become more expensive. This leads to CDP users covering their CDPs and leaving the ecosystem, causing the outstanding supply of Dai to decrease. At the same time, the increased Target Rate causes the capital gains from holding Dai to go up, leading to a corresponding increase in Dai demand. This combination of reduced supply and increased demand causes the Dai market price to increase, pushing it up towards the Target Price.
+When the market price of Dai is below the Target Price, the Target Rate increases. This causes the Target Price to increase, which in turn causes borrowing Dai to become more expensive. This leads to CDP users covering their CDPs and leaving the ecosystem, causing the outstanding supply of Dai to decrease. At the same time, the increased Target Rate causes the capital gains from holding Dai to go up, leading to a corresponding increase in Dai demand. This combination of reduced supply and increased demand causes the Dai market price to increase, pushing it up towards the Target Price.
 
 The same mechanism works in reverse if the Dai market price is higher than the Target Price: the Target Rate decreases, leading to an increased demand for borrowing Dai and a decreased demand for holding it. This causes the Dai market price to decrease, pushing it down towards the Target Price.
 
 This mechanism is a negative feedback loop: Deviation away from the Target Price in one direction increases the force in the opposite direction. The magnitude of the Target Rate adjustments depends on how long the market price remains on the same side of the Target Price. Longer deviations result in aggressive adjustments, while shorter deviations result in small adjustments.
 
-The Target Price and the Target Rate are entirely determined by market dynamics, and thus not directly controlled by MKR voters. They can only set the feedback mechanism’s Sensitivity Parameter. This is a global parameter that determines the magnitude the target rate can change in response to Dai target/market price deviation, which allows tuning the rate of feedback to the scale of the system. The Sensitivity Parameter is not considered a Risk Parameter because it doesn't impact Dai solvency.
+The Target Price and the Target Rate are entirely determined by market dynamics, and thus not directly controlled by MKR voters. Voters can only set the feedback mechanism’s Sensitivity Parameter. This is a global parameter that determines the magnitude of target rate change in response to Dai target/market price deviation, which allows tuning the rate of feedback to the scale of the system. The Sensitivity Parameter is not considered a Risk Parameter because it does not impact Dai solvency.
 
 ## Risk Management of The Dai Credit System
 
@@ -102,7 +102,7 @@ The penalty ratio is used to cover the inefficiency of the liquidation mechanism
 
 ### Limbo Duration
 
-A CDP enters limbo in the unlikely event that price information for collateral is not available (such as if all the oracles simultaneously suffer a technical failure). The limbo duration determines how long before all CDPs of that type are liquidated.
+A CDP enters limbo in the unlikely event that price information for collateral is not available (such as if all the oracles simultaneously suffer a technical failure). The limbo duration determines how long before all CDPs of that type can be liquidated.
 
 ## Examples
 
@@ -132,7 +132,7 @@ Another crucial group of external actors that the Dai Credit System requires to 
  
 ## Design Goals
 
-The current design of The Dai Credit System is the result of almost 2 years of iterations on the concept of a cryptocurrency with price stability backed by digital assets as collateral. We take every opportunity we see to make reductions and simplifications based on things that are theoretically equivalent under an economic incentive analysis. For example, cash flow to MKR holders is represented as Buy&Burn rather than dividends, as their economic impact is equivalent but Buy&Burn is less complex to implement with smart contracts. This later ended up yielding returns when it enabled us to massively simplify the CDP lifecycle and liquidation processes.
+The current design of The Dai Credit System the synthesis of several years of research regarding the concept of a cryptocurrency with price stability backed by digital assets as collateral. We take every opportunity we see to make reductions and simplifications based on things that are theoretically equivalent under an economic incentive analysis. For example, cash flow to MKR holders is represented as Buy&Burn rather than dividends, as their economic impact is equivalent but Buy&Burn is less complex to implement with smart contracts. This later ended up yielding returns when it enabled us to massively simplify the CDP lifecycle and liquidation processes.
 Another design goal was to ensure all operations were constant in both space and time complexity. This introduced some challenges as the system simulates multiple sets of continuously growing or shrinking balances and most state is actually a function of multiple real-time variables. The intention of this design goal was to create a system that scales well as the userbase of the Dai Credit System grows massively over time.
 
 ## Addressable Market
