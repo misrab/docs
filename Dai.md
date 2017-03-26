@@ -14,7 +14,7 @@ title: Dai Credit System Simplified, v0.8
 
 ## Abstract
 
-We propose a new cryptocurrency called Dai that automatically reacts to emergent market conditions in order to stabilize its value against the major world currencies. Dai is created by the Dai Credit System, a decentralized platform that runs on the Ethereum blockchain. The Dai Credit System ensures that Dai is always backed in excess by a collateral portfolio of other Ethereum-based digital assets. An autonomous feedback mechanism continuously modifies the incentives for borrowing and holding Dai, with the goal of continuously matching supply to demand. The risk of the collateral portfolio is managed by holders of a separate digital asset called Maker (MKR) and as such, the value of MKR is directly tied to the success of the Dai Credit System. This means that MKR holders have a financial incentive to act as responsible regulators of the solvency of the Dai Credit System and ultimately the price stability of Dai itself.
+We propose a new cryptocurrency called Dai that automatically reacts to emergent market conditions in order to stabilize its value against the major world currencies. Dai is created by the Dai Credit System, a decentralized platform that runs on the Ethereum blockchain. The Dai Credit System ensures that Dai is always backed in excess by a collateral portfolio of other Ethereum-based digital assets. An autonomous feedback mechanism continuously modifies the incentives for borrowing and holding Dai, matching supply with demand. The risk of the collateral portfolio is managed by holders of a separate digital asset called Maker (MKR) and as such, the value of MKR is directly tied to the success of the Dai Credit System. This means that MKR holders have a financial incentive to act as responsible regulators of the solvency of the Dai Credit System and ultimately the price stability of Dai itself.
 
 ## Introduction
 
@@ -60,7 +60,7 @@ Liquidations aren't guaranteed to be profitable even if triggered when the colla
 
 The Dai Target Price is used to determine the collateral-to-debt ratio of a CDP, and thus the Target Price represents the price at which Dai is backed by collateral in the long term. The Target Price is continuously adjusted according to the current Target Rate. Automatic Target Rate adjustments continuously ensure that the Dai market price remains stabilized around the Target Price in the short term. 
 
-When the market price of Dai is below the Target Price, the Target Rate increases. This causes the Target Price to increase, which in turn causes borrowing Dai to become more expensive. This leads to CDP users covering their CDPs and leaving the ecosystem, causing the outstanding supply of Dai to decrease. At the same time, the increased Target Rate causes the capital gains from holding Dai to go up, leading to a corresponding increase in Dai demand. This combination of reduced supply and increased demand causes the Dai market price to increase, pushing it up towards the Target Price.
+When the market price of Dai is below the Target Price, the Target Rate increases. This causes the Target Price to increase at a higher rate, causing borrowing Dai to become more expensive. This leads to CDP users covering their CDPs and leaving the ecosystem, causing the outstanding supply of Dai to decrease. At the same time, the increased Target Rate causes the capital gains from holding Dai to increasing, leading to a corresponding increase in Dai demand. This combination of reduced supply and increased demand causes the Dai market price to increase, pushing it up towards the Target Price.
 
 The same mechanism works in reverse if the Dai market price is higher than the Target Price: the Target Rate decreases, leading to an increased demand for borrowing Dai and a decreased demand for holding it. This causes the Dai market price to decrease, pushing it down towards the Target Price.
 
@@ -105,6 +105,8 @@ The penalty ratio is used to cover the inefficiency of the liquidation mechanism
 A CDP enters limbo in the unlikely event that price information for collateral is not available (such as if all the oracles simultaneously suffer a technical failure). The limbo duration determines how long before all CDPs of that type can be liquidated.
 
 ## Examples
+
+_The Dai Credit System can be used by anyone without any restrictions or sign-up process._
 
 **Example 1:** Bob wants to borrow 100 Dai. He locks an amount of ETH worth significantly more than 100 Dai into a CDP and uses it to borrow 100 Dai. The 100 Dai is instantly sent directly to his Ethereum account. Assuming that the Stability Fee is 1% per year, Bob will need 101 Dai to cover the CDP if he decides to retrieve his ETH after one year.
 
@@ -167,11 +169,11 @@ The highest impact risk is a potential Black Swan event on collateral used for t
 ### Competition & The Importance of Ease-of-Use
 As mentioned previously, there is a large amount of money and brainpower working on cryptocurrency with price stability. By virtue of having “true decentralization”, The Dai Credit System is by far the most complex model being contemplated in the blockchain industry. A perceived risk is a movement among cryptocurrency users where the ideals of decentralization are exchanged for the simplicity and marketing of centralized digital assets.
 
-**Mitigation:** We expect that Dai will in fact be quite easy to use for a regular crypto-user. Dai will be a standard Ethereum token adhering to the ERC20 standard and easily available with high liquidity across the ecosystem. The system has been designed in such a way that the average user need not understand the underlying mechanics of the system in order to use Dai, a key notion that will foster adoption. 
+**Mitigation:** We expect that Dai will in fact be quite easy to use for a regular crypto-user. Dai will be a standard Ethereum token adhering to the ERC20 standard and easily available with high liquidity across the ecosystem. The system has been designed in such a way that the average user need not understand the underlying mechanics of the system in order to use Dai. 
 
-We will also invest heavily in core branding and international educational material during the initial launch of the system. If resources permit, the Dai Foundation will use the surplus of its MKR holdings on charity projects, which if done correctly and on a large enough scale, will guarantee positively biased exposure in mainstream media and growth of the Dai foundation's brand.
+The complexities of the Dai Credit System will need to be understood primarily by Keepers and sophisticated capital investment companies that use the Dai Credit System for advanced financial purposes, and these types of users have enough resources to onboard themselves as long as there is abundant and clear documentation of every aspect of the systems mechanics, which the Maker community and Dai Foundation will ensure is the case.
 
-The complexities of the Dai Credit System will need to be understood primarily by Keepers and sophisticated capital investment companies that use the Dai Credit System for advanced financial purposes. While we appreciate that The Dai Credit System can be difficult to understand for laymen, it is not impossible to grasp. Nevertheless, most individuals interested in cryptocurrency will not need to understand all of the components of the system, similar to how many Ether holders do not fully understand the complex inner-workings of Ethereum.
+The Dai Foundation will also invest heavily in core branding and international educational material during the initial launch of the system. If resources permit, the Dai Foundation will use the surplus of its MKR holdings on charity projects, which if done correctly and on a large enough scale, will guarantee positively biased exposure in mainstream media and growth of the Dai brand. 
  
 ### Pricing Errors, Irrationality & Unforeseen Events
 
