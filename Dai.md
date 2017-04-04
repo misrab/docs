@@ -20,9 +20,11 @@ We propose a new cryptocurrency called Dai that automatically reacts to emergent
 
 The blockchain revolution has long been touted as the key to many seemingly intractable global problems, from mundane topics like international remittances to lofty ambitions like global financial inclusion. However, the process of mainstream adoption has been slow due to one harsh reality: price volatility of decentralized digital assets. 
 
-Hayek postulates that the most successful form of money in an economy of competing private currencies would be the one with the most stable value, i.e. the one that has least volatility against a consumer price index. A cryptocurrency with price stability is a crucial component of the blockchain economy as the majority of interesting Decentralized Applications require a stable medium of exchange to be usable. Popular digital assets such as Bitcoin (BTC) and Ether (ETH) are too volatile to allow individuals and businesses plan long term activities. As such, it will be necessary to have cryptocurrencies with price stability before widespread adoption of blockchain technology can occur. In the competition for blue ocean market share amongst these currencies there will likely be a single winner: the one with the highest degree of price stability.
+A cryptocurrency with price stability is a crucial component of the blockchain economy, as the majority of interesting Decentralized Applications require a stable medium of exchange to be usable. Popular digital assets such as Bitcoin (BTC) and Ether (ETH) are too volatile to allow individuals and businesses plan long term activities. Therefor, it will be necessary to have cryptocurrencies with price stability before widespread adoption of blockchain technology can occur.
 
 While there are a range of projects in the blockchain space aiming to create a cryptocurrency with price stability, the majority use a centralized custodian of the funds. This erases many of the benefits offered by the decentralized platforms on which they are used, limiting their ability to interconnect and synergize in a permissionless manner. For a cryptocurrency with price stability to fit coherently into the decentralized ecosystem, it must adhere to the principles of decentralization.
+
+Hayek postulates that the most successful form of money in an economy of competing private currencies would be the one with the most stable value, i.e. the one that has least volatility against a consumer price index. For this reason, it is important that a cryptocurrency with price stability is optimized for price stability and economic efficiency above all else. It is this principle that has guided the design of the Dai Credit System.
 
 ## Basic Mechanics
 
@@ -122,20 +124,13 @@ _Liquidations ensure that in the event of a price crash in the collateral that b
 
 **Example 4:** Let's assume that we have an Ether CDP type with a liquidation ratio of 145%, a penalty ratio of 105%, and our Ether-CDP is outstanding at 150% of the collateral ratio. Then, the Ether price crashes 10% against the Target Price. This causes the collateral ratio of the CDP to fall to ~135%. As it falls below its liquidation ratio, traders can trigger its liquidation and begin bidding with Dai for buying MKR in the debt auction. Traders can also begin bidding with Dai for buying the ~135 Dai worth of collateral in the collateral auction. Once there is at least 105 Dai being bid on the Ether collateral, traders reverse bid to take the least amount of collateral for 105 Dai and the remainder is returned to the original borrower.
 
-## Keepers: Keeping the system rational and economically efficient
+## Keepers and Oracles: The external actors that support the Dai Credit System.
 
 A keeper is an independent (usually automated) actor that is incentivized by profit opportunities to contribute to decentralized systems. In the context of The Dai Credit System, keepers participate in the Debt Auctions and Collateral Auctions when CDPs are liquidated, and the Buy&Burn auctions that continuously happen during normal operation of the system.
 
 Keepers also trade Dai around the Target Price. Keepers will want to sell Dai when the market price is higher than the Target Price. Similarly, keepers buy Dai when the market price is below the Target Price. This is in order to profit from the expected long-term convergence towards the Target Price.
 
-## Oracles: Providing Price Feeds
-
-Another crucial group of external actors that the Dai Credit System requires to function are price feed oracles. Oracles are independent external actors or decentralized applications that provide a data feed onto the blockchain for smart contracts to consume. The Dai Credit System needs information about the market price of the Dai and its deviation from the Target Price in order to adjust the target rate. It also needs information about the market price of the assets used as collateral in CDPs, in order to know when liquidations should be triggered.
- 
-## Design Goals
-
-The current design of The Dai Credit System is the synthesis of several years of research regarding the concept of a cryptocurrency with price stability backed by digital assets as collateral. We take every opportunity to make reductions and simplifications based on things that are theoretically equivalent under an economic incentive analysis. For example, cash flow to MKR holders is represented as Buy&Burn rather than dividends, as their economic impact is equivalent but Buy&Burn is less complex to implement with smart contracts. This action later resulted in yielding returns when it enabled us to greatly simplify the CDP lifecycle and liquidation processes.
-An additional design goal was to ensure all operations were constant in both space and time complexity. This introduced some challenges as the system simulates multiple sets of continuously growing or shrinking balances and most state is actually a function of multiple real-time variables. The intention of this design goal was to create a system that scales well as the userbase of the Dai Credit System grows over time.
+Price feed oracles are another crucial group of external actors that the Dai Credit System requires to function. Oracles are independent external actors or decentralized applications that provide a data feed onto the blockchain for smart contracts to consume. The Dai Credit System needs information about the market price of the Dai and its deviation from the Target Price in order to adjust the target rate. It also needs information about the market price of the assets used as collateral in CDPs, in order to know when liquidations should be triggered.
 
 ## Addressable Market
 
@@ -197,13 +192,13 @@ The Dai Credit System was designed to solve the crucial problem of stable exchan
 
 **Dai:** The cryptocurrency with price stability that is the asset of exchange in the Dai Credit System. It is a standard Ethereum token adhering to the ERC20 standard.
 
-**Debt Auction:** the continuous MKR reverse-auction to cover Emergency Debt needs.
+**Buy&Burn:** The continuously occuring auction that buys and removes MKR from circulation using collected fees (interest from CDPs) as well proceeds from collateral auctions.
 
-**Surplus Auction:** the continuous MKR buy-and-burn auction using collected fees (interest from CDPs) and also proceeds from collateral auctions.
+**Debt Auction:** The reverse-auction seeling MKR for dai to cover Emergency Debt when a CDP becomes undercollateralized.
 
 **Collateral Auction:** An auction designed to prioritize covering debt owed by a CDP, then to give the owner the best price possible for their collateral refund.
  
-**The Dai Foundation:** A non-profit foundation based in Zug, Switzerland, registered as MakerDai Stiftung which exists to support the development of The Dai Credit System software infrastructure.
+**The Dai Foundation:** A non-profit foundation based in Zug, Switzerland, which exists to support the development of The Dai Credit System software infrastructure.
  
 **Keepers:** Independent economic actors that trade Dai, CDPs and/or MKR, create Dai or close CDPs and seek arbitrage on The Dai Credit System and as a result help maintain Dai market rationality and price stability.
 
