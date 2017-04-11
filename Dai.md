@@ -194,9 +194,9 @@ The Dai Credit System was designed to solve the crucial problem of stable exchan
 
 **Buy&Burn:** The continuously occurring auction that buys and removes MKR from circulation using collected fees (interest from CDPs) as well proceeds from collateral auctions.
 
-**Debt Auction:** The reverse-auction seeking MKR for Dai to cover Emergency Debt when a CDP becomes undercollateralized.
+**Debt Auction:** The reverse-auction selling MKR for Dai to cover Emergency Debt when a CDP becomes undercollateralized.
 
-**Collateral Auction:** An auction designed to prioritize covering debt owed by a CDP, then to give the owner the best price possible for their collateral refund.
+**Collateral Auction:** The auction selling collateral in a liquidated CDP. It is designed to prioritize covering the debt owed by the CDP, then to give the owner the best price possible for their collateral refund.
  
 **The Dai Foundation:** A non-profit foundation based in Zug, Switzerland, which exists to support the development of The Dai Credit System software infrastructure.
  
