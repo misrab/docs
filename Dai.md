@@ -20,7 +20,7 @@ We propose a new cryptocurrency called Dai that automatically reacts to emergent
 
 The blockchain revolution has long been touted as the key to many seemingly intractable global problems, from mundane topics like international remittances to lofty ambitions like global financial inclusion. However, the process of mainstream adoption has been slow due to one harsh reality: price volatility of decentralized digital assets. 
 
-A cryptocurrency with price stability is a crucial component of the blockchain economy, as the majority of interesting Decentralized Applications require a stable medium of exchange to be usable. Popular digital assets such as Bitcoin (BTC) and Ether (ETH) are too volatile to allow individuals and businesses plan long term activities. Therefor, it will be necessary to have cryptocurrencies with price stability before widespread adoption of blockchain technology can occur.
+A cryptocurrency with price stability is a crucial component of the blockchain economy, as the majority of interesting Decentralized Applications require a stable medium of exchange to be usable. Popular digital assets such as Bitcoin (BTC) and Ether (ETH) are too volatile to allow individuals and businesses plan long term activities. Therefore, it will be necessary to have cryptocurrencies with price stability before widespread adoption of blockchain technology can occur.
 
 While there are a range of projects in the blockchain space aiming to create a cryptocurrency with price stability, the majority use a centralized custodian of the funds. This erases many of the benefits offered by the decentralized platforms on which they are used, limiting their ability to interconnect and synergize in a permissionless manner. For a cryptocurrency with price stability to fit coherently into the decentralized ecosystem, it must adhere to the principles of decentralization.
 
@@ -62,7 +62,7 @@ Liquidations aren't guaranteed to be profitable even if triggered when the colla
 
 The Dai Target Price is used to determine the collateral-to-debt ratio of a CDP, and thus the Target Price represents the price at which Dai is backed by collateral in the long term. The Target Price is continuously adjusted according to the current Target Rate. Automatic Target Rate adjustments continuously ensure that the Dai market price remains stabilized around the Target Price in the short term. 
 
-When the market price of Dai is below the Target Price, the Target Rate increases. This causes the Target Price to increase at a higher rate, causing borrowing Dai to become more expensive. This leads to CDP users covering their CDPs and leaving the ecosystem, causing the outstanding supply of Dai to decrease. At the same time, the increased Target Rate causes the capital gains from holding Dai to increasing, leading to a corresponding increase in Dai demand. This combination of reduced supply and increased demand causes the Dai market price to increase, pushing it up towards the Target Price.
+When the market price of Dai is below the Target Price, the Target Rate increases. This causes the Target Price to increase at a higher rate, causing borrowing Dai to become more expensive. This leads to CDP users covering their CDPs and leaving the ecosystem, causing the outstanding supply of Dai to decrease. At the same time, the increased Target Rate causes the capital gains from holding Dai to increase, leading to a corresponding increase in Dai demand. This combination of reduced supply and increased demand causes the Dai market price to increase, pushing it up towards the Target Price.
 
 The same mechanism works in reverse if the Dai market price is higher than the Target Price: the Target Rate decreases, leading to an increased demand for borrowing Dai and a decreased demand for holding it. This causes the Dai market price to decrease, pushing it down towards the Target Price.
 
@@ -150,7 +150,7 @@ There are many potential risks facing the successful development, deployment, an
 
 The greatest risk to the system during its early stages is the risk of a malicious programmer finding an exploit in the deployed smart contracts, and using it to break or steal from the system before the vulnerability can be fixed. In a worst case scenario, all decentralized digital assets that are held as collateral in The Dai Credit System, such as Ether or Augur Reputation, could be stolen without any chance of recovery. The part of the collateral portfolio that is not decentralized, such as Digix Gold IOU’s, would not be stolen in such an event as they can be frozen and controlled through a centralized backdoor.
 
-**Mitigation:** During the early stages of deployment, The Dai Credit System will have emergency security features that allows oracles to enact global settlement of the system if they detect a security breach. Global settlement will mean that all dai is destroyed, and dai holders are automatically transferred digital assets from the CDPs with a value equal to the Target Price of the dai they were holding (with the leftover collateral going to CDP users, as if their CDP had been liquidated). This feature will allow the system to deflect attacks that enable the attacker to slowly drain assets out of the smart contracts, but does not defend against attacks that enable the attacker to instantly drain all the collateral at once.
+**Mitigation:** During the early stages of deployment, The Dai Credit System will have emergency security features that allows oracles to enact global settlement of the system if they detect a security breach. Global settlement will mean that all Dai is destroyed, and Dai holders are automatically transferred digital assets from the CDPs with a value equal to the Target Price of the Dai they were holding (with the leftover collateral going to CDP users, as if their CDP had been liquidated). This feature will allow the system to deflect attacks that enable the attacker to slowly drain assets out of the smart contracts, but does not defend against attacks that enable the attacker to instantly drain all the collateral at once.
 
 The more general and long term mitigation strategy is to invest heavily in an in-house team of world class programmers who specialize in developing secure smart contracts while also continuously performing independent security audits in parallel. Contract security and best practices have been the highest priority of the Dai development effort since its inception. The codebase has already undergone two independent security audits by arguably some of the best security researchers in the blockchain industry.
 
@@ -161,12 +161,12 @@ The highest impact risk is a potential Black Swan event on collateral used for t
 
 **Mitigation:** CDP collateral will be limited to ETH in the early stages with the debt ceiling limited initially, growing gradually over time. In addition, one of our experimental projects called Simple Stablecoin will provide pertinent lessons learned, potentially including new Stability Levers.
  
-### Competition & The Importance of Ease-of-Use
+### Competition & the Importance of Ease-of-Use
 As mentioned previously, there is a large amount of money and brainpower working on cryptocurrency with price stability. By virtue of having “true decentralization”, The Dai Credit System is by far the most complex model being contemplated in the blockchain industry. A perceived risk is a movement among cryptocurrency users where the ideals of decentralization are exchanged for the simplicity and marketing of centralized digital assets.
 
 **Mitigation:** We expect that Dai will in fact be quite easy to use for a regular crypto-user. Dai will be a standard Ethereum token adhering to the ERC20 standard and easily available with high liquidity across the ecosystem. The system has been designed in such a way that the average user need not understand the underlying mechanics of the system in order to use Dai. 
 
-The complexities of the Dai Credit System will need to be understood primarily by Keepers and sophisticated capital investment companies that use the Dai Credit System for advanced financial purposes, and these types of users have enough resources to onboard themselves as long as there is abundant and clear documentation of every aspect of the systems mechanics, which the Maker community and Dai Foundation will ensure is the case.
+The complexities of the Dai Credit System will need to be understood primarily by Keepers and sophisticated capital investment companies that use the Dai Credit System for advanced financial purposes, and these types of users have enough resources to onboard themselves as long as there is abundant and clear documentation of every aspect of the system's mechanics, which the Maker community and Dai Foundation will ensure is the case.
 
 The Dai Foundation will also invest heavily in core branding and international educational material during the initial launch of the system. If resources permit, the Dai Foundation will use the surplus of its MKR holdings on charity projects, which if done correctly and on a large enough scale, will guarantee positively biased exposure in mainstream media and growth of the Dai brand. 
  
@@ -174,7 +174,7 @@ The Dai Foundation will also invest heavily in core branding and international e
 
 A number of unforeseen events could potentially occur, such as a problem with the price feed from the Oracles or other unexpected events such as irrational market dynamics that cause variation in the value of Dai for an extended period. If confidence is lost in the system, the deflation rate adjustment or even MKR dilution could hit extreme levels and still not bring liquidity and stability to the market.
 
-**Mitigation:** The Maker community will need to incentivize a sufficiently large capital pool to act as Keepers of the market in order to maximize rationality and market efficiency as well as grow the Dai Credit System gradually at a steady pace. The Dai Foundation will also deploy its large capital reserves to act as a keeper, ensuring that even in the complete absense of any other well capitalized early-stage keepers, the Dai Foundation alone will be able to keep the system rational.
+**Mitigation:** The Maker community will need to incentivize a sufficiently large capital pool to act as Keepers of the market in order to maximize rationality and market efficiency as well as grow the Dai Credit System gradually at a steady pace. The Dai Foundation will also deploy its large capital reserves to act as a keeper, ensuring that even in the complete absence of any other well capitalized early-stage keepers, the Dai Foundation alone will be able to keep the system rational.
 
 ### Failure of centralized infrastructure
 
@@ -192,9 +192,9 @@ The Dai Credit System was designed to solve the crucial problem of stable exchan
 
 **Dai:** The cryptocurrency with price stability that is the asset of exchange in the Dai Credit System. It is a standard Ethereum token adhering to the ERC20 standard.
 
-**Buy&Burn:** The continuously occuring auction that buys and removes MKR from circulation using collected fees (interest from CDPs) as well proceeds from collateral auctions.
+**Buy&Burn:** The continuously occurring auction that buys and removes MKR from circulation using collected fees (interest from CDPs) as well proceeds from collateral auctions.
 
-**Debt Auction:** The reverse-auction seeling MKR for dai to cover Emergency Debt when a CDP becomes undercollateralized.
+**Debt Auction:** The reverse-auction seeking MKR for Dai to cover Emergency Debt when a CDP becomes undercollateralized.
 
 **Collateral Auction:** An auction designed to prioritize covering debt owed by a CDP, then to give the owner the best price possible for their collateral refund.
  
@@ -214,7 +214,7 @@ The Dai Credit System was designed to solve the crucial problem of stable exchan
 
 **Sensitivity Parameter:** The variable that determines how aggressively the Dai Credit System automatically changes the Target Rate in response to Dai market price deviations.
 
-**Target Rate Feedback Mechanism:** means the way the Dai Credit System adjusts the Target Rate to cause market forces to maintain stability around the Target Rate.
+**Target Rate Feedback Mechanism:** The way the Dai Credit System adjusts the Target Rate to cause market forces to maintain stability around the Target Rate.
 
 **SDR:** The Special Drawing Rights, a basket of national currencies maintained by the International Monetary Fund. Widely seen in finance as the most stable reference point for real world values.
 
