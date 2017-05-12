@@ -171,7 +171,7 @@ The Dai Foundation will also invest heavily in core branding and international e
  
 ### Pricing Errors, Irrationality & Unforeseen Events
 
-A number of unforeseen events could potentially occur, such as a problem with the price feed from the Oracles or other unexpected events such as irrational market dynamics that cause variation in the value of Dai for an extended period. If confidence is lost in the system, the deflation rate adjustment or even MKR dilution could hit extreme levels and still not bring liquidity and stability to the market.
+A number of unforeseen events could potentially occur, such as a problem with the price feed from the Oracles or other unexpected events such as irrational market dynamics that cause variation in the value of Dai for an extended period. If confidence is lost in the system, the target rate adjustment or even MKR dilution could hit extreme levels and still not bring liquidity and stability to the market.
 
 **Mitigation:** The Maker community will need to incentivize a sufficiently large capital pool to act as Keepers of the market in order to maximize rationality and market efficiency as well as grow the Dai Stablecoin System gradually at a steady pace. The Dai Foundation will also deploy its large capital reserves to act as a keeper, ensuring that even in the complete absence of any other well capitalized early-stage keepers, the Dai Foundation alone will be able to keep the system rational.
 
