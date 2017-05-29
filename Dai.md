@@ -94,7 +94,7 @@ Liquidation ratio is the collateral-to-debt ratio at which a CDP becomes vulnera
 
 ### Stability Fee
 
-The Stability Fee is a fee paid by every CDP. It is defined as a yearly percentage that is calculated on top of the existing debt of the CDP. When the CDP user covers their CDP, the Dai used to cover the CDP debt is destroyed, but the Dai used to pay the Stability Fee is instead sent to Buy&Burn.
+The Stability Fee is a fee paid by every CDP. It is defined as a yearly percentage that is calculated on top of the existing debt of the CDP. When the CDP user covers their CDP, the Dai used to cover the CDP debt is destroyed, but the Dai used to pay the Stability Fee is used to buy MKR, which are then destroyed (see: Buy&Burn)
 A higher Stability Fee represents a higher expected rate of sudden death for the collateral (such as a hack or severe disaster instantly rendering the asset completely worthless).
 
 ### Penalty Ratio
