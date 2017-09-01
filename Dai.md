@@ -121,7 +121,7 @@ _Although CDPs are not fungible with each other, the ownership of a CDP is trans
 
 _Liquidations ensure that in the event of a price crash in the collateral that backs a CDP type, the system will automatically be able to close CDPs that become too risky as result, ensuring that the outstanding Dai supply remain fully collateralized and solvent._
 
-**Example 4:** Let's assume that we have an Ether CDP type with a liquidation ratio of 145%, a penalty ratio of 105%, and our Ether-CDP is outstanding at 150% of the collateral ratio. Then, the Ether price crashes 10% against the Target Price. This causes the collateral ratio of the CDP to fall to ~135%. As it falls below its liquidation ratio, traders can trigger its liquidation and begin bidding with Dai for buying MKR in the debt auction. Traders can also begin bidding with Dai for buying the ~135 Dai worth of collateral in the collateral auction. Once there is at least 105 Dai being bid on the Ether collateral, traders reverse bid to take the least amount of collateral for 105 Dai and the remainder is returned to owner of the CDP prior to its liquidation.
+**Example 4:** Let's assume that we have an Ether CDP type with a liquidation ratio of 145%, a penalty ratio of 105%, and our Ether CDP is outstanding with a collateral to debt ratio of 150% . Then, the Ether price crashes 10% against the Target Price. This causes the collateral to debt ratio of the CDP to fall to ~135%. As it falls below its liquidation ratio, traders can trigger its liquidation and begin bidding with Dai for buying MKR in the debt auction. Traders can also begin bidding with Dai for buying the ~135 Dai worth of collateral in the collateral auction. Once there is at least 105 Dai being bid on the Ether collateral, traders reverse bid to take the least amount of collateral for 105 Dai and the remainder is returned to owner of the CDP prior to its liquidation.
 
 ## Keepers and Oracles: The external actors that support the Dai Stablecoin System.
 
@@ -233,5 +233,5 @@ The Dai Stablecoin System was designed to solve the crucial problem of stable ex
 
 [SoundCloud](https://soundcloud.com/makerdao) - Governance meeting recordings
 
-[Oasis](https://pro.oasisdex.com/) - MKR and Dai decentralized exchange
+[Oasis](https://oasisdex.com/) - MKR and Dai decentralized exchange
 
