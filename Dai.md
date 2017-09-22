@@ -10,7 +10,7 @@ title: Dai Stablecoin System Simplified, v0.8
 **Rune Christensen, Nikolai Mushegian, Daniel Brockman, Kenny Rowe, Andy Milenius, Ryan Zurrer**
 
 
-*This is a condensed overview of the Dai Stablecoin System as defined in the “Purple Paper”: http://stablecoin.technology/purple.pdf. The Purple Paper is a formal specification and reference implementation that is modified by an RFC process.*
+*This is a condensed overview of the Dai Stablecoin System as defined in the “Purple Paper”: https://makerdao.com/purple. The Purple Paper is a formal specification and reference implementation that is modified by an RFC process.*
 
 ## Abstract
 
